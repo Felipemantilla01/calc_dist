@@ -108,7 +108,8 @@ __webpack_require__.r(__webpack_exports__);
 // The list of file replacements can be found in `angular.json`.
 const environment = {
     production: false,
-    apiUrl: 'http://34.229.63.119:8080'
+    // apiUrl: 'http://34.229.63.119:8080'
+    apiUrl: 'http://localhost:8080'
 };
 /*
  * For easier debugging in development mode, you can import the following file
@@ -486,6 +487,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+const _c0 = ["reportTable"];
 const material_names = {
     "Beazer Homes MD": [
         { "material_name_area": "Abstolute Black" },
@@ -1666,7 +1668,7 @@ class ReportComponent {
             { 'area_option': 'Wine & Bar' },
         ];
         this.columnDefs = [
-            { headerName: 'id', field: 'id', pinned: 'left', hide: false, headerClass: 'color-header-1' },
+            { headerName: 'id', field: 'id', pinned: 'left', hide: false, headerClass: 'color-header-1', sortable: true },
             { headerName: 'Date', field: 'date', pinned: 'left', headerClass: 'color-header-1', cellEditor: 'datePicker' },
             { headerName: 'Job Number', field: 'job_number', pinned: 'left', headerClass: 'color-header-1', cellEditorSelector: function (params) {
                     return {
@@ -2290,10 +2292,35 @@ class ReportComponent {
             this.rowData = res['comparisons'];
         });
     }
+    onCellValueChanged(event) {
+        console.log('data after changes is: ', event);
+        this.comparisonService.update(event.data).subscribe((res) => {
+            console.log(res);
+        });
+    }
+    addNew() {
+        this.comparisonService.addNew().subscribe((res) => {
+            console.log(res);
+            this.rowData.push(res.data);
+            this.reportTable.api.setRowData(this.rowData);
+            this.reportTable.api.ensureIndexVisible(this.rowData.length - 1, 'bottom');
+        });
+    }
 }
 ReportComponent.ɵfac = function ReportComponent_Factory(t) { return new (t || ReportComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_comparison_service__WEBPACK_IMPORTED_MODULE_2__["ComparisonService"])); };
-ReportComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: ReportComponent, selectors: [["app-report"]], decls: 1, vars: 5, consts: [[1, "ag-theme-alpine", 2, "width", "100vw", "height", "80vh", 3, "rowData", "columnDefs", "defaultColDef", "components", "frameworkComponents"]], template: function ReportComponent_Template(rf, ctx) { if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "ag-grid-angular", 0);
+ReportComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: ReportComponent, selectors: [["app-report"]], viewQuery: function ReportComponent_Query(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵviewQuery"](_c0, true);
+    } if (rf & 2) {
+        var _t;
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx.reportTable = _t.first);
+    } }, decls: 4, vars: 5, consts: [[1, "ag-theme-alpine", 2, "width", "100vw", "height", "80vh", 3, "rowData", "columnDefs", "defaultColDef", "components", "frameworkComponents", "cellValueChanged"], ["reportTable", ""], [1, "btn", "btn-primary", 3, "click"]], template: function ReportComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "ag-grid-angular", 0, 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("cellValueChanged", function ReportComponent_Template_ag_grid_angular_cellValueChanged_0_listener($event) { return ctx.onCellValueChanged($event); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "button", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function ReportComponent_Template_button_click_2_listener() { return ctx.addNew(); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3, "Add New");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     } if (rf & 2) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("rowData", ctx.rowData)("columnDefs", ctx.columnDefs)("defaultColDef", ctx.defaultColDef)("components", ctx.components)("frameworkComponents", ctx.frameworkComponents);
     } }, directives: [ag_grid_angular__WEBPACK_IMPORTED_MODULE_3__["AgGridAngular"]], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3JlcG9ydC9yZXBvcnQuY29tcG9uZW50Lmxlc3MifQ== */"] });
@@ -2304,7 +2331,10 @@ ReportComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineCo
                 templateUrl: './report.component.html',
                 styleUrls: ['./report.component.less']
             }]
-    }], function () { return [{ type: _services_comparison_service__WEBPACK_IMPORTED_MODULE_2__["ComparisonService"] }]; }, null); })();
+    }], function () { return [{ type: _services_comparison_service__WEBPACK_IMPORTED_MODULE_2__["ComparisonService"] }]; }, { reportTable: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"],
+            args: ['reportTable']
+        }] }); })();
 function getCharCodeFromEvent(event) {
     event = event || window.event;
     return (typeof event.which == "undefined") ? event.keyCode : event.which;
@@ -2579,6 +2609,12 @@ class ComparisonService {
     }
     getAll() {
         return this.httpClient.get(this.REST_API_SERVER + 'all');
+    }
+    update(data) {
+        return this.httpClient.put(this.REST_API_SERVER + 'update/' + data.id, data);
+    }
+    addNew() {
+        return this.httpClient.post(this.REST_API_SERVER + 'addnew', null);
     }
 }
 ComparisonService.ɵfac = function ComparisonService_Factory(t) { return new (t || ComparisonService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"])); };
