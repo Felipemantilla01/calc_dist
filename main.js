@@ -12,6 +12,50 @@ module.exports = __webpack_require__(/*! /home/dev/Documents/calculation_report/
 
 /***/ }),
 
+/***/ "7q1o":
+/*!*******************************************!*\
+  !*** ./src/app/services/price.service.ts ***!
+  \*******************************************/
+/*! exports provided: PriceService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PriceService", function() { return PriceService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @environments/environment */ "AytR");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ "tk/3");
+
+
+
+
+
+class PriceService {
+    constructor(httpClient) {
+        this.httpClient = httpClient;
+        this.prices = [];
+        this.getAll();
+    }
+    getAll() {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+            let prices = yield this.httpClient.get(`${_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].apiUrl}/api/prices/all`).toPromise();
+            return prices['prices'];
+        });
+    }
+}
+PriceService.ɵfac = function PriceService_Factory(t) { return new (t || PriceService)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"])); };
+PriceService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjectable"]({ token: PriceService, factory: PriceService.ɵfac, providedIn: 'root' });
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵsetClassMetadata"](PriceService, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"],
+        args: [{
+                providedIn: 'root'
+            }]
+    }], function () { return [{ type: _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"] }]; }, null); })();
+
+
+/***/ }),
+
 /***/ "9vUh":
 /*!****************************************!*\
   !*** ./src/app/home/home.component.ts ***!
@@ -65,6 +109,49 @@ HomeComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComp
 
 /***/ }),
 
+/***/ "9zYQ":
+/*!**********************************************!*\
+  !*** ./src/app/services/material.service.ts ***!
+  \**********************************************/
+/*! exports provided: MaterialService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MaterialService", function() { return MaterialService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @environments/environment */ "AytR");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ "tk/3");
+
+
+
+
+
+class MaterialService {
+    constructor(httpClient) {
+        this.httpClient = httpClient;
+        this.getAll();
+    }
+    getAll() {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+            let materials = yield this.httpClient.get(`${_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].apiUrl}/api/materials/all`).toPromise();
+            return materials['materials'];
+        });
+    }
+}
+MaterialService.ɵfac = function MaterialService_Factory(t) { return new (t || MaterialService)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"])); };
+MaterialService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjectable"]({ token: MaterialService, factory: MaterialService.ɵfac, providedIn: 'root' });
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵsetClassMetadata"](MaterialService, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"],
+        args: [{
+                providedIn: 'root'
+            }]
+    }], function () { return [{ type: _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"] }]; }, null); })();
+
+
+/***/ }),
+
 /***/ "AytR":
 /*!*****************************************!*\
   !*** ./src/environments/environment.ts ***!
@@ -81,10 +168,7 @@ __webpack_require__.r(__webpack_exports__);
 const environment = {
     production: false,
     // apiUrl: 'http://34.229.63.119:8080'
-    // apiUrl: 'http://localhost:3000',
-    // apiUrl: 'http://18.220.63.12:3000'
-    // apiUrl: 'http://18.219.248.98',
-    apiUrl: 'http://44.192.27.64'
+    apiUrl: 'http://localhost:8080',
 };
 /*
  * For easier debugging in development mode, you can import the following file
@@ -619,6 +703,49 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjector
 
 /***/ }),
 
+/***/ "Zrks":
+/*!********************************************************!*\
+  !*** ./src/app/services/material-name-area.service.ts ***!
+  \********************************************************/
+/*! exports provided: MaterialNameAreaService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MaterialNameAreaService", function() { return MaterialNameAreaService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @environments/environment */ "AytR");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ "tk/3");
+
+
+
+
+
+class MaterialNameAreaService {
+    constructor(httpClient) {
+        this.httpClient = httpClient;
+        this.getAll();
+    }
+    getAll() {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+            let materials = yield this.httpClient.get(`${_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].apiUrl}/api/material_name_ares/all`).toPromise();
+            return materials['material_name_areas'];
+        });
+    }
+}
+MaterialNameAreaService.ɵfac = function MaterialNameAreaService_Factory(t) { return new (t || MaterialNameAreaService)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"])); };
+MaterialNameAreaService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjectable"]({ token: MaterialNameAreaService, factory: MaterialNameAreaService.ɵfac, providedIn: 'root' });
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵsetClassMetadata"](MaterialNameAreaService, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"],
+        args: [{
+                providedIn: 'root'
+            }]
+    }], function () { return [{ type: _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"] }]; }, null); })();
+
+
+/***/ }),
+
 /***/ "jw39":
 /*!********************************************!*\
   !*** ./src/app/report/report.component.ts ***!
@@ -629,16 +756,41 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjector
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ReportComponent", function() { return ReportComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
-/* harmony import */ var _components_select_cell_renderer_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/select-cell-renderer.component */ "xOZy");
-/* harmony import */ var _services_comparison_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/comparison.service */ "peT6");
-/* harmony import */ var ag_grid_angular__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ag-grid-angular */ "cWTo");
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _components_select_cell_renderer_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/select-cell-renderer.component */ "xOZy");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! lodash */ "LvDl");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _services_comparison_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../services/comparison.service */ "peT6");
+/* harmony import */ var _services_material_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../services/material.service */ "9zYQ");
+/* harmony import */ var _services_price_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../services/price.service */ "7q1o");
+/* harmony import */ var _services_material_name_area_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../services/material-name-area.service */ "Zrks");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/common */ "ofXK");
+/* harmony import */ var ag_grid_angular__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ag-grid-angular */ "cWTo");
+
+
+
+
+
+
 
 
 
 
 
 const _c0 = ["reportTable"];
+function ReportComponent_div_0_Template(rf, ctx) { if (rf & 1) {
+    const _r3 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "ag-grid-angular", 2, 3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("cellValueChanged", function ReportComponent_div_0_Template_ag_grid_angular_cellValueChanged_1_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r3); const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](); return ctx_r2.onCellValueChanged($event); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("rowData", ctx_r0.rowData)("columnDefs", ctx_r0.columnDefs)("defaultColDef", ctx_r0.defaultColDef)("components", ctx_r0.components)("frameworkComponents", ctx_r0.frameworkComponents);
+} }
 const material_names = {
     "Beazer Homes MD": [
         { "material_name_area": "Abstolute Black" },
@@ -1730,9 +1882,15 @@ const material_names = {
         { "material_name_area": "White Ornamental" }
     ]
 };
+let materials = [];
+let prices = [];
+let material_name_areas = [];
 class ReportComponent {
-    constructor(comparisonService) {
+    constructor(comparisonService, materialService, priceService, materiaNameAreaService) {
         this.comparisonService = comparisonService;
+        this.materialService = materialService;
+        this.priceService = priceService;
+        this.materiaNameAreaService = materiaNameAreaService;
         this.job_status = [
             { 'job_status': 'Complete' },
             { 'job_status': 'Canceled' },
@@ -1818,6 +1976,24 @@ class ReportComponent {
             { 'area_option': 'Window seat' },
             { 'area_option': 'Wine & Bar' },
         ];
+        this.installer_options = [
+            { 'installer_option': 'Jhonny Rivera' },
+            { 'installer_option': 'Michael Davis' },
+            { 'installer_option': 'Mauricio Valle' },
+            { 'installer_option': 'Jack Master Lhama' },
+            { 'installer_option': 'Paco Delcid' },
+            { 'installer_option': 'Jorge Pichinte' },
+            { 'installer_option': 'Uram Dagdandorj' },
+            { 'installer_option': 'Kelvin Alexander' },
+            { 'installer_option': 'Rodolfo Zelaya' },
+            { 'installer_option': 'TJ' },
+            { 'installer_option': 'OG' },
+            { 'installer_option': 'Orgil Batjargal' },
+            { 'installer_option': 'Alex Delcid' },
+            { 'installer_option': 'Kemal Ausar' },
+            { 'installer_option': 'Ben Jones' },
+            { 'installer_option': 'Sodo Goocho' },
+        ];
         this.columnDefs = [
             { headerName: 'id', field: 'id', pinned: 'left', hide: false, headerClass: 'color-header-1', sortable: true },
             { headerName: 'Date', field: 'date', pinned: 'left', headerClass: 'color-header-1', cellEditor: 'datePicker' },
@@ -1825,7 +2001,8 @@ class ReportComponent {
                     return {
                         component: 'numericCellEditor'
                     };
-                } },
+                }
+            },
             { headerName: 'Job Status', field: 'job_status', pinned: 'left', headerClass: 'color-header-1',
                 cellEditor: 'selectCellRenderer',
                 cellEditorParams: {
@@ -2020,7 +2197,29 @@ class ReportComponent {
             },
             { headerName: 'Customer Job Area', field: 'customer_job_area', headerClass: 'color-header-1',
                 cellEditorSelector: function (param) {
-                    if (param.data.customer_type == 'Builder') {
+                    if (param.data.customer_type == 'Builder' ||
+                        param.data.customer_builder_name == 'Beazer Homes MD' ||
+                        param.data.customer_builder_name == 'Beazer Homes VA' ||
+                        param.data.customer_builder_name == 'Caruso MD' ||
+                        param.data.customer_builder_name == 'Creative Homes' ||
+                        param.data.customer_builder_name == 'Dan Ryan Metro' ||
+                        param.data.customer_builder_name == 'Dr Horton DE' ||
+                        param.data.customer_builder_name == 'Gemcraft' ||
+                        param.data.customer_builder_name == 'HD' ||
+                        param.data.customer_builder_name == 'Howmar Homes' ||
+                        param.data.customer_builder_name == 'JP ORLEANS' ||
+                        param.data.customer_builder_name == 'Kettler Forlines' ||
+                        param.data.customer_builder_name == 'KHOV HOMES' ||
+                        param.data.customer_builder_name == 'Koch Homes' ||
+                        param.data.customer_builder_name == 'Lennar' ||
+                        param.data.customer_builder_name == 'NVR- Ryan Homes' ||
+                        param.data.customer_builder_name == 'Pegasus' ||
+                        param.data.customer_builder_name == 'POWERS HOMES' ||
+                        param.data.customer_builder_name == 'Pulte NEC' ||
+                        param.data.customer_builder_name == 'Stanley Martin' ||
+                        param.data.customer_builder_name == 'AJ Home Improvement' ||
+                        param.data.customer_builder_name == 'DELUCA HOMES' ||
+                        param.data.customer_builder_name == 'DMR - PDR') {
                         return {
                             component: 'selectCellRenderer'
                         };
@@ -2261,7 +2460,7 @@ class ReportComponent {
                             { 'customer_job_area': 'Marlboro Riding (MR)' }
                         ];
                     }
-                    if (param.data.customer_builder_name == 'AJ Home Improvement ') {
+                    if (param.data.customer_builder_name == 'AJ Home Improvement') {
                         rowData = [
                             { 'customer_job_area': 'Alvin Johnson' }
                         ];
@@ -2302,6 +2501,20 @@ class ReportComponent {
             { headerName: 'Material Name Area 1', field: 'material_name_area_1', headerClass: 'color-header-2',
                 cellEditor: 'selectCellRenderer',
                 cellEditorParams: function (param) {
+                    if (param.data.customer_type == 'Residential' ||
+                        param.data.customer_type == 'Builder' ||
+                        param.data.customer_type == 'COMMERCIAL Millwork' ||
+                        param.data.customer_type == 'COMMERCIAL GC' ||
+                        param.data.customer_type == 'Contractor HOUSE' ||
+                        param.data.customer_type == 'Contractor MD Showroom' ||
+                        param.data.customer_type == 'Kitchen & Bath House' ||
+                        param.data.customer_type == 'Kitchen & Bath MD Showroom') {
+                        return {
+                            'propertyRendered': 'material_name_area',
+                            'rowData': material_name_areas,
+                            'columnDefs': [{ headerName: 'Material Name', field: 'material_name_area' }]
+                        };
+                    }
                     return {
                         'propertyRendered': 'material_name_area',
                         'rowData': material_names[param.data.customer_builder_name],
@@ -2309,44 +2522,133 @@ class ReportComponent {
                     };
                 }
             },
-            { headerName: 'Material', field: 'material_1', headerClass: 'color-header-2' },
-            { headerName: 'Brand', field: 'brand_1', headerClass: 'color-header-2' },
-            { headerName: 'Level', field: 'level_1', headerClass: 'color-header-2' },
-            { headerName: 'Price', field: 'price_1', headerClass: 'color-header-2' },
-            { headerName: 'AREA 2', field: 'area_2', headerClass: 'color-header-3' },
-            { headerName: 'Material Name Area', field: 'material_name_area_2', headerClass: 'color-header-3' },
-            { headerName: 'Material', field: 'material_2', headerClass: 'color-header-3' },
-            { headerName: 'Brand', field: 'brand_2', headerClass: 'color-header-3' },
-            { headerName: 'Level', field: 'level_2', headerClass: 'color-header-3' },
-            { headerName: 'Price', field: 'price_2', headerClass: 'color-header-3' },
-            { headerName: 'Other Areas', field: 'area_other', headerClass: 'color-header-4' },
-            { headerName: 'Material Name Areas', field: 'material_name_area_other', headerClass: 'color-header-4' },
-            { headerName: 'Material', field: 'material_other', headerClass: 'color-header-4' },
-            { headerName: 'Brand', field: 'brand_other', headerClass: 'color-header-4' },
-            { headerName: 'Level', field: 'level_other', headerClass: 'color-header-4' },
-            { headerName: 'Price', field: 'price_other', headerClass: 'color-header-4' },
+            { headerName: 'Material', field: 'material_1', headerClass: 'color-header-2', valueGetter: this.materialGetter },
+            { headerName: 'Brand', field: 'brand_1', headerClass: 'color-header-2', valueGetter: this.brandGetter },
+            { headerName: 'Level', field: 'level_1', headerClass: 'color-header-2', valueGetter: this.levelGetter },
+            { headerName: 'Price', field: 'price_1', headerClass: 'color-header-2', valueGetter: this.priceGetter },
+            { headerName: 'AREA 2', field: 'area_2', headerClass: 'color-header-3',
+                cellEditor: 'selectCellRenderer',
+                cellEditorParams: {
+                    'propertyRendered': 'area_option',
+                    'rowData': this.area_options,
+                    'columnDefs': [{ headerName: 'AREA 2', field: 'area_option' }]
+                }
+            },
+            { headerName: 'Material Name Area', field: 'material_name_area_2', headerClass: 'color-header-3',
+                cellEditor: 'selectCellRenderer',
+                cellEditorParams: function (param) {
+                    return {
+                        'propertyRendered': 'material_name_area',
+                        'rowData': material_names[param.data.customer_builder_name],
+                        'columnDefs': [{ headerName: 'Material Name Area', field: 'material_name_area' }]
+                    };
+                }
+            },
+            { headerName: 'Material', field: 'material_2', headerClass: 'color-header-3', valueGetter: this.materialGetter },
+            { headerName: 'Brand', field: 'brand_2', headerClass: 'color-header-3', valueGetter: this.brandGetter },
+            { headerName: 'Level', field: 'level_2', headerClass: 'color-header-3', valueGetter: this.levelGetter },
+            { headerName: 'Price', field: 'price_2', headerClass: 'color-header-3', valueGetter: this.priceGetter },
+            { headerName: 'Other Areas', field: 'area_other', headerClass: 'color-header-4',
+                cellEditor: 'selectCellRenderer',
+                cellEditorParams: {
+                    'propertyRendered': 'area_option',
+                    'rowData': this.area_options,
+                    'columnDefs': [{ headerName: 'Other Areas', field: 'area_option' }]
+                }
+            },
+            { headerName: 'Material Name Areas', field: 'material_name_area_other', headerClass: 'color-header-4',
+                cellEditor: 'selectCellRenderer',
+                cellEditorParams: function (param) {
+                    return {
+                        'propertyRendered': 'material_name_area',
+                        'rowData': material_names[param.data.customer_builder_name],
+                        'columnDefs': [{ headerName: 'Material Name Areas', field: 'material_name_area' }]
+                    };
+                }
+            },
+            { headerName: 'Material', field: 'material_other', headerClass: 'color-header-4', valueGetter: this.materialGetter },
+            { headerName: 'Brand', field: 'brand_other', headerClass: 'color-header-4', valueGetter: this.brandGetter },
+            { headerName: 'Level', field: 'level_other', headerClass: 'color-header-4', valueGetter: this.levelGetter },
+            { headerName: 'Price', field: 'price_other', headerClass: 'color-header-4', valueGetter: this.priceGetter },
             { headerName: 'Phases', field: 'phases', headerClass: 'color-header-5' },
             { headerName: 'Material Name Phases', field: 'material_name_phases', headerClass: 'color-header-5' },
-            { headerName: 'Material', field: 'material_phases', headerClass: 'color-header-5' },
-            { headerName: 'Brand', field: 'brand_phases', headerClass: 'color-header-5' },
-            { headerName: 'Level', field: 'level_phases', headerClass: 'color-header-5' },
-            { headerName: 'Price', field: 'price_phases', headerClass: 'color-header-5' },
+            { headerName: 'Material', field: 'material_phases', headerClass: 'color-header-5', valueGetter: this.materialGetter },
+            { headerName: 'Brand', field: 'brand_phases', headerClass: 'color-header-5', valueGetter: this.brandGetter },
+            { headerName: 'Level', field: 'level_phases', headerClass: 'color-header-5', valueGetter: this.levelGetter },
+            { headerName: 'Price', field: 'price_phases', headerClass: 'color-header-5', valueGetter: this.priceGetter },
             { headerName: 'Other Areas 2', field: 'area_other_2', headerClass: 'color-header-4' },
             { headerName: 'Material Name Areas 2', field: 'material_name_area_other_2', headerClass: 'color-header-4' },
-            { headerName: 'Material', field: 'material_other_2', headerClass: 'color-header-4' },
-            { headerName: 'Brand', field: 'brand_other_2', headerClass: 'color-header-4' },
-            { headerName: 'Level', field: 'level_other_2', headerClass: 'color-header-4' },
-            { headerName: 'Price', field: 'price_other_2', headerClass: 'color-header-4' },
+            { headerName: 'Material', field: 'material_other_2', headerClass: 'color-header-4', valueGetter: this.materialGetter },
+            { headerName: 'Brand', field: 'brand_other_2', headerClass: 'color-header-4', valueGetter: this.brandGetter },
+            { headerName: 'Level', field: 'level_other_2', headerClass: 'color-header-4', valueGetter: this.levelGetter },
+            { headerName: 'Price', field: 'price_other_2', headerClass: 'color-header-4', valueGetter: this.priceGetter },
             { headerName: 'Phases 2', field: 'phases_2', headerClass: 'color-header-5' },
             { headerName: 'Material Name Phases 2', field: 'material_name_phases_2', headerClass: 'color-header-5' },
-            { headerName: 'Material', field: 'material_phases_2', headerClass: 'color-header-5' },
-            { headerName: 'Brand', field: 'brand_phases_2', headerClass: 'color-header-5' },
-            { headerName: 'Level', field: 'level_phases_2', headerClass: 'color-header-5' },
-            { headerName: 'Price', field: 'price_phases_2', headerClass: 'color-header-5' },
-            { headerName: 'STATE', field: 'state', headerClass: 'color-header-1' },
+            { headerName: 'Material', field: 'material_phases_2', headerClass: 'color-header-5', valueGetter: this.materialGetter },
+            { headerName: 'Brand', field: 'brand_phases_2', headerClass: 'color-header-5', valueGetter: this.brandGetter },
+            { headerName: 'Level', field: 'level_phases_2', headerClass: 'color-header-5', valueGetter: this.levelGetter },
+            { headerName: 'Price', field: 'price_phases_2', headerClass: 'color-header-5', valueGetter: this.priceGetter },
+            { headerName: 'STATE', field: 'state', headerClass: 'color-header-1',
+                cellEditorSelector: function (param) {
+                    if (param.data.customer_builder_name == 'Dan Ryan DE' ||
+                        param.data.customer_builder_name == 'Dan Ryan Metro' ||
+                        param.data.customer_builder_name == 'Pulte MADC' ||
+                        param.data.customer_builder_name == 'Pulte NEC') {
+                        return {
+                            component: 'selectCellRenderer'
+                        };
+                    }
+                    else {
+                        return {
+                            component: ''
+                        };
+                    }
+                },
+                cellEditorParams: function (param) {
+                    let rowData;
+                    if (param.data.customer_builder_name == 'Dan Ryan DE') {
+                        rowData = [
+                            { state: 'DE' }
+                        ];
+                    }
+                    if (param.data.customer_builder_name == 'Dan Ryan Metro') {
+                        rowData = [
+                            { state: 'PA' },
+                            { state: 'MD' },
+                            { state: 'VA' },
+                        ];
+                    }
+                    if (param.data.customer_builder_name == 'Pulte MADC') {
+                        rowData = [
+                            { state: 'MD' },
+                            { state: 'VA' },
+                            { state: 'DC' }
+                        ];
+                    }
+                    if (param.data.customer_builder_name == 'Pulte NEC') {
+                        rowData = [
+                            { state: 'PA' },
+                            { state: 'NJ' },
+                            { state: 'DE' }
+                        ];
+                    }
+                    return {
+                        'propertyRendered': 'state',
+                        'rowData': rowData,
+                        'columnDefs': [{ headerName: 'State', field: 'state' }]
+                    };
+                }
+            },
             { headerName: 'Out of State', field: 'oute_of_state', headerClass: 'color-header-1' },
             { headerName: 'Complete Job Pictures', field: 'complete_job_picture', headerClass: 'color-header-1' },
-            { headerName: 'Installer', field: 'installer', headerClass: 'color-header-1' },
+            { headerName: 'Installer', field: 'installer', headerClass: 'color-header-1',
+                cellEditor: 'selectCellRenderer',
+                cellEditorParams: {
+                    'propertyRendered': 'installer_option',
+                    'rowData': this.installer_options,
+                    'columnDefs': [{ headerName: 'Installer', field: 'installer_option' }]
+                }
+            },
             { headerName: 'MW CAD SQFT(Kitchen)', field: 'mw_cad_sqft_kitchen', headerClass: 'color-header-1' },
             { headerName: 'Calculated CAD SQFT(Kitchen)', field: 'calculated_cad_sqft_kitchen', headerClass: 'color-header-1' },
             { headerName: 'MW SOLD SQFT(Kitchen)', field: 'mw_sold_sqft_kitchen', headerClass: 'color-header-1' },
@@ -2434,13 +2736,20 @@ class ReportComponent {
             numericCellEditor: NumericCellEditor
         };
         this.frameworkComponents = {
-            selectCellRenderer: _components_select_cell_renderer_component__WEBPACK_IMPORTED_MODULE_1__["AutoCompleteComponent"]
+            selectCellRenderer: _components_select_cell_renderer_component__WEBPACK_IMPORTED_MODULE_2__["AutoCompleteComponent"]
         };
+        this.materials = [];
     }
     ngOnInit() {
-        this.comparisonService.getAll().subscribe((res) => {
-            console.log(res);
-            this.rowData = res['comparisons'];
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+            this.materials = yield this.materialService.getAll();
+            materials = this.materials;
+            this.prices = yield this.priceService.getAll();
+            prices = this.prices;
+            material_name_areas = yield this.materiaNameAreaService.getAll();
+            this.comparisonService.getAll().subscribe((res) => {
+                this.rowData = res['comparisons'];
+            });
         });
     }
     onCellValueChanged(event) {
@@ -2457,33 +2766,269 @@ class ReportComponent {
             this.reportTable.api.ensureIndexVisible(this.rowData.length - 1, 'bottom');
         });
     }
+    materialGetter(params) {
+        if (params.colDef.field == 'material_1' && params.data.area_1 == "")
+            return "";
+        if (params.colDef.field == 'material_2' && params.data.area_2 == "")
+            return "";
+        if (params.colDef.field == 'material_other' && params.data.area_other == "")
+            return "";
+        if (params.colDef.field == 'material_phases' && params.data.phases == "")
+            return "";
+        if (params.colDef.field == 'material_other_2' && params.data.area_other_2 == "")
+            return "";
+        if (params.colDef.field == 'material_phases_2' && params.data.phases_2 == "")
+            return "";
+        if (params.data.customer_type == null)
+            return "";
+        if (params.data.customer_type.toLowerCase() == 'Commercial GC'.toLowerCase() ||
+            params.data.customer_type.toLowerCase() == 'Commercial Millwork'.toLowerCase() ||
+            params.data.customer_type.toLowerCase() == 'Residential'.toLowerCase() ||
+            params.data.customer_type.toLowerCase() == 'Contractor HOUSE'.toLowerCase() ||
+            params.data.customer_type.toLowerCase() == 'Contractor MD Showroom'.toLowerCase() ||
+            params.data.customer_type.toLowerCase() == 'Kitchen & Bath HOUSE'.toLowerCase() ||
+            params.data.customer_type.toLowerCase() == 'Kitchen & Bath MD Showroom'.toLowerCase() ||
+            params.data.customer_builder_name.toLowerCase() == 'Floormax'.toLowerCase()) {
+            let lookup = lodash__WEBPACK_IMPORTED_MODULE_3__["find"](materials, function (o) {
+                if (params.colDef.field == 'material_1')
+                    return o.title.toLowerCase() == params.data.material_name_area_1.toLowerCase();
+                if (params.colDef.field == 'material_2')
+                    return o.title.toLowerCase() == params.data.material_name_area_2.toLowerCase();
+                if (params.colDef.field == 'material_other')
+                    return o.title.toLowerCase() == params.data.material_name_area_other.toLowerCase();
+                if (params.colDef.field == 'material_phases')
+                    return o.title.toLowerCase() == params.data.material_name_phases.toLowerCase();
+                if (params.colDef.field == 'material_other_2')
+                    return o.title.toLowerCase() == params.data.material_name_area_other_2.toLowerCase();
+                if (params.colDef.field == 'material_phases_2')
+                    return o.title.toLowerCase() == params.data.material_name_phases_2.toLowerCase();
+            });
+            if (lookup) {
+                return lookup.material;
+            }
+            return '';
+        }
+        else {
+            let substitute;
+            if (params.colDef.field == 'material_1')
+                substitute = params.data.customer_builder_name + params.data.material_name_area_1;
+            if (params.colDef.field == 'material_2')
+                substitute = params.data.customer_builder_name + params.data.material_name_area_2;
+            if (params.colDef.field == 'material_other')
+                substitute = params.data.customer_builder_name + params.data.material_name_area_other;
+            if (params.colDef.field == 'material_phases')
+                substitute = params.data.customer_builder_name + params.data.material_name_phases;
+            if (params.colDef.field == 'material_other_2')
+                substitute = params.data.customer_builder_name + params.data.material_name_area_other_2;
+            if (params.colDef.field == 'material_phases_2')
+                substitute = params.data.customer_builder_name + params.data.material_name_phases_2;
+            substitute = substitute.replaceAll(" ", "");
+            let lookup = lodash__WEBPACK_IMPORTED_MODULE_3__["find"](prices, function (o) {
+                return o.conct.toLowerCase() == substitute.toLowerCase();
+            });
+            if (lookup) {
+                return lookup.material;
+            }
+            return "";
+        }
+        return "";
+    }
+    brandGetter(params) {
+        if (params.colDef.field == "brand_1" && params.data.area_1 == "")
+            return "";
+        if (params.colDef.field == "brand_2" && params.data.area_2 == "")
+            return "";
+        if (params.colDef.field == "brand_other" && params.data.area_other == "")
+            return "";
+        if (params.colDef.field == "brand_phases" && params.data.phases == "")
+            return "";
+        if (params.colDef.field == "brand_other_2" && params.data.area_other_2 == "")
+            return "";
+        if (params.colDef.field == "brand_phases_2" && params.data.phases_2 == "")
+            return "";
+        if (params.data.customer_type == null)
+            return "";
+        if (params.data.customer_type.toLowerCase() == 'Commercial GC'.toLowerCase() ||
+            params.data.customer_type.toLowerCase() == 'Commercial Millwork'.toLowerCase() ||
+            params.data.customer_type.toLowerCase() == 'Residential'.toLowerCase() ||
+            params.data.customer_type.toLowerCase() == 'Contractor HOUSE'.toLowerCase() ||
+            params.data.customer_type.toLowerCase() == 'Contractor MD Showroom'.toLowerCase() ||
+            params.data.customer_type.toLowerCase() == 'Kitchen & Bath HOUSE'.toLowerCase() ||
+            params.data.customer_type.toLowerCase() == 'Kitchen & Bath MD Showroom'.toLowerCase() ||
+            params.data.customer_builder_name.toLowerCase() == 'Floormax'.toLowerCase()) {
+            let lookup = lodash__WEBPACK_IMPORTED_MODULE_3__["find"](materials, function (o) {
+                if (params.colDef.field == "brand_1")
+                    return o.title.toLowerCase() == params.data.material_name_area_1.toLowerCase();
+                if (params.colDef.field == "brand_2")
+                    return o.title.toLowerCase() == params.data.material_name_area_2.toLowerCase();
+                if (params.colDef.field == "brand_other")
+                    return o.title.toLowerCase() == params.data.material_name_area_other.toLowerCase();
+                if (params.colDef.field == "brand_phases")
+                    return o.title.toLowerCase() == params.data.material_name_phases.toLowerCase();
+                if (params.colDef.field == "brand_other_2")
+                    return o.title.toLowerCase() == params.data.material_name_area_other_2.toLowerCase();
+                if (params.colDef.field == "brand_phases_2")
+                    return o.title.toLowerCase() == params.data.material_name_phases_2.toLowerCase();
+            });
+            if (lookup) {
+                return lookup.material_type;
+            }
+            return '';
+        }
+        else {
+            let substitute;
+            if (params.colDef.field == "brand_1")
+                substitute = params.data.customer_builder_name + params.data.material_name_area_1;
+            if (params.colDef.field == "brand_2")
+                substitute = params.data.customer_builder_name + params.data.material_name_area_2;
+            if (params.colDef.field == "brand_other")
+                substitute = params.data.customer_builder_name + params.data.material_name_area_other;
+            if (params.colDef.field == "brand_phases")
+                substitute = params.data.customer_builder_name + params.data.material_name_phases;
+            if (params.colDef.field == "brand_other_2")
+                substitute = params.data.customer_builder_name + params.data.material_name_area_other_2;
+            if (params.colDef.field == "brand_phases_2")
+                substitute = params.data.customer_builder_name + params.data.material_name_phases_2;
+            substitute = substitute.replaceAll(" ", "");
+            let lookup = lodash__WEBPACK_IMPORTED_MODULE_3__["find"](prices, function (o) {
+                return o.conct.toLowerCase() == substitute.toLowerCase();
+            });
+            if (lookup) {
+                return lookup.material_name;
+            }
+            return "";
+        }
+        return "";
+    }
+    levelGetter(params) {
+        if (params.colDef.field == "level_1" && params.data.area_1 == "")
+            return "";
+        if (params.colDef.field == "level_2" && params.data.area_2 == "")
+            return "";
+        if (params.colDef.field == "level_other" && params.data.area_other == "")
+            return "";
+        if (params.colDef.field == "level_phases" && params.data.phases == "")
+            return "";
+        if (params.colDef.field == "level_other_2" && params.data.area_other_2 == "")
+            return "";
+        if (params.colDef.field == "level_phases_2" && params.data.phases_2 == "")
+            return "";
+        if (params.data.customer_type == null)
+            return "";
+        if (params.data.customer_type.toLowerCase() == 'Commercial GC'.toLowerCase() ||
+            params.data.customer_type.toLowerCase() == 'Commercial Millwork'.toLowerCase()) {
+            return "N/A";
+        }
+        if (params.data.customer_type.toLowerCase() == 'Residential'.toLowerCase() ||
+            params.data.customer_type.toLowerCase() == 'Contractor HOUSE'.toLowerCase() ||
+            params.data.customer_type.toLowerCase() == 'Contractor MD Showroom'.toLowerCase() ||
+            params.data.customer_type.toLowerCase() == 'Kitchen & Bath HOUSE'.toLowerCase() ||
+            params.data.customer_type.toLowerCase() == 'Kitchen & Bath MD Showroom'.toLowerCase() ||
+            params.data.customer_builder_name.toLowerCase() == 'Floormax'.toLowerCase()) {
+            return 'Select Level';
+        }
+        else {
+            let substitute;
+            if (params.colDef.field == "level_1")
+                substitute = params.data.customer_builder_name + params.data.material_name_area_1;
+            if (params.colDef.field == "level_2")
+                substitute = params.data.customer_builder_name + params.data.material_name_area_2;
+            if (params.colDef.field == "level_other")
+                substitute = params.data.customer_builder_name + params.data.material_name_area_other;
+            if (params.colDef.field == "level_phases")
+                substitute = params.data.customer_builder_name + params.data.material_name_phases;
+            if (params.colDef.field == "level_other_2")
+                substitute = params.data.customer_builder_name + params.data.material_name_area_other_2;
+            if (params.colDef.field == "level_phases_2")
+                substitute = params.data.customer_builder_name + params.data.material_name_phases_2;
+            substitute = substitute.replaceAll(" ", "");
+            let lookup = lodash__WEBPACK_IMPORTED_MODULE_3__["find"](prices, function (o) {
+                return o.conct.toLowerCase() == substitute.toLowerCase();
+            });
+            if (lookup) {
+                return lookup.level;
+            }
+            return "";
+        }
+        return "";
+    }
+    priceGetter(params) {
+        if (params.colDef.field == "price_1" && params.data.area_1 == "")
+            return "";
+        if (params.colDef.field == "price_2" && params.data.area_2 == "")
+            return "";
+        if (params.colDef.field == "price_other" && params.data.area_other == "")
+            return "";
+        if (params.colDef.field == "price_phases" && params.data.phases == "")
+            return "";
+        if (params.colDef.field == "price_other_2" && params.data.area_other_2 == "")
+            return "";
+        if (params.colDef.field == "price_phases_2" && params.data.phases_2 == "")
+            return "";
+        if (params.data.customer_type == null)
+            return "";
+        if (params.data.customer_type.toLowerCase() == 'Commercial GC'.toLowerCase() ||
+            params.data.customer_type.toLowerCase() == 'Commercial Millwork'.toLowerCase()) {
+            return "N/A";
+        }
+        if (params.data.customer_type.toLowerCase() == 'Residential'.toLowerCase() ||
+            params.data.customer_type.toLowerCase() == 'Contractor HOUSE'.toLowerCase() ||
+            params.data.customer_type.toLowerCase() == 'Contractor MD Showroom'.toLowerCase() ||
+            params.data.customer_type.toLowerCase() == 'Kitchen & Bath HOUSE'.toLowerCase() ||
+            params.data.customer_type.toLowerCase() == 'Kitchen & Bath MD Showroom'.toLowerCase() ||
+            params.data.customer_builder_name.toLowerCase() == 'Floormax'.toLowerCase()) {
+            return 'Not defined';
+        }
+        else {
+            let substitute;
+            if (params.colDef.field == "price_1")
+                substitute = params.data.customer_builder_name + params.data.material_name_area_1;
+            if (params.colDef.field == "price_2")
+                substitute = params.data.customer_builder_name + params.data.material_name_area_2;
+            if (params.colDef.field == "price_other")
+                substitute = params.data.customer_builder_name + params.data.material_name_area_other;
+            if (params.colDef.field == "price_phases")
+                substitute = params.data.customer_builder_name + params.data.material_name_phases;
+            if (params.colDef.field == "price_other_2")
+                substitute = params.data.customer_builder_name + params.data.material_name_area_other_2;
+            if (params.colDef.field == "price_phases_2")
+                substitute = params.data.customer_builder_name + params.data.material_name_phases_2;
+            substitute = substitute.replaceAll(" ", "");
+            let lookup = lodash__WEBPACK_IMPORTED_MODULE_3__["find"](prices, function (o) {
+                return o.conct.toLowerCase() == substitute.toLowerCase();
+            });
+            if (lookup) {
+                return lookup.price;
+            }
+            return "";
+        }
+        return "";
+    }
 }
-ReportComponent.ɵfac = function ReportComponent_Factory(t) { return new (t || ReportComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_comparison_service__WEBPACK_IMPORTED_MODULE_2__["ComparisonService"])); };
-ReportComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: ReportComponent, selectors: [["app-report"]], viewQuery: function ReportComponent_Query(rf, ctx) { if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵviewQuery"](_c0, true);
+ReportComponent.ɵfac = function ReportComponent_Factory(t) { return new (t || ReportComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_services_comparison_service__WEBPACK_IMPORTED_MODULE_4__["ComparisonService"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_services_material_service__WEBPACK_IMPORTED_MODULE_5__["MaterialService"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_services_price_service__WEBPACK_IMPORTED_MODULE_6__["PriceService"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_services_material_name_area_service__WEBPACK_IMPORTED_MODULE_7__["MaterialNameAreaService"])); };
+ReportComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({ type: ReportComponent, selectors: [["app-report"]], viewQuery: function ReportComponent_Query(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵviewQuery"](_c0, true);
     } if (rf & 2) {
         var _t;
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx.reportTable = _t.first);
-    } }, decls: 4, vars: 5, consts: [[1, "ag-theme-alpine", 2, "width", "100vw", "height", "80vh", 3, "rowData", "columnDefs", "defaultColDef", "components", "frameworkComponents", "cellValueChanged"], ["reportTable", ""], [1, "btn", "btn-primary", 3, "click"]], template: function ReportComponent_Template(rf, ctx) { if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "ag-grid-angular", 0, 1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("cellValueChanged", function ReportComponent_Template_ag_grid_angular_cellValueChanged_0_listener($event) { return ctx.onCellValueChanged($event); });
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "button", 2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function ReportComponent_Template_button_click_2_listener() { return ctx.addNew(); });
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3, "Add New");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵloadQuery"]()) && (ctx.reportTable = _t.first);
+    } }, decls: 3, vars: 1, consts: [[4, "ngIf"], [1, "btn", "btn-primary", 3, "click"], [1, "ag-theme-alpine", 2, "width", "100vw", "height", "80vh", 3, "rowData", "columnDefs", "defaultColDef", "components", "frameworkComponents", "cellValueChanged"], ["reportTable", ""]], template: function ReportComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](0, ReportComponent_div_0_Template, 3, 5, "div", 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "button", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("click", function ReportComponent_Template_button_click_1_listener() { return ctx.addNew(); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](2, "Add New");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
     } if (rf & 2) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("rowData", ctx.rowData)("columnDefs", ctx.columnDefs)("defaultColDef", ctx.defaultColDef)("components", ctx.components)("frameworkComponents", ctx.frameworkComponents);
-    } }, directives: [ag_grid_angular__WEBPACK_IMPORTED_MODULE_3__["AgGridAngular"]], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3JlcG9ydC9yZXBvcnQuY29tcG9uZW50Lmxlc3MifQ== */"] });
-/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](ReportComponent, [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx.rowData.length !== 0);
+    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_8__["NgIf"], ag_grid_angular__WEBPACK_IMPORTED_MODULE_9__["AgGridAngular"]], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3JlcG9ydC9yZXBvcnQuY29tcG9uZW50Lmxlc3MifQ== */"] });
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵsetClassMetadata"](ReportComponent, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"],
         args: [{
                 selector: 'app-report',
                 templateUrl: './report.component.html',
                 styleUrls: ['./report.component.less']
             }]
-    }], function () { return [{ type: _services_comparison_service__WEBPACK_IMPORTED_MODULE_2__["ComparisonService"] }]; }, { reportTable: [{
-            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"],
+    }], function () { return [{ type: _services_comparison_service__WEBPACK_IMPORTED_MODULE_4__["ComparisonService"] }, { type: _services_material_service__WEBPACK_IMPORTED_MODULE_5__["MaterialService"] }, { type: _services_price_service__WEBPACK_IMPORTED_MODULE_6__["PriceService"] }, { type: _services_material_name_area_service__WEBPACK_IMPORTED_MODULE_7__["MaterialNameAreaService"] }]; }, { reportTable: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"],
             args: ['reportTable']
         }] }); })();
 function getCharCodeFromEvent(event) {
@@ -2569,7 +3114,7 @@ function getDatePicker() {
         this.eInput.value = params.value;
         this.eInput.classList.add('ag-input');
         this.eInput.style.height = '100%';
-        $(this.eInput).datepicker({ dateFormat: 'dd/mm/yy' });
+        $(this.eInput).datepicker({ dateFormat: 'mm/dd/yy' });
     };
     Datepicker.prototype.getGui = function () {
         return this.eInput;
@@ -3035,8 +3580,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 class ComparisonService {
-    // private REST_API_SERVER = 'http://localhost:8080/api/comparisons/'
-    // private REST_API_SERVER = 'http://34.229.63.119:8080/api/comparisons/'
     constructor(httpClient) {
         this.httpClient = httpClient;
     }
