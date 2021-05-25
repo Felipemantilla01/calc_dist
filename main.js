@@ -2601,8 +2601,38 @@ class ReportComponent {
             { headerName: 'Brand', field: 'brand_other', headerClass: 'color-header-4', valueGetter: this.brandGetter },
             { headerName: 'Level', field: 'level_other', headerClass: 'color-header-4', valueGetter: this.levelGetter },
             { headerName: 'Price', field: 'price_other', headerClass: 'color-header-4', valueGetter: this.priceGetter },
-            { headerName: 'Phases', field: 'phases', headerClass: 'color-header-5' },
-            { headerName: 'Material Name Phases', field: 'material_name_phases', headerClass: 'color-header-5' },
+            { headerName: 'Phases', field: 'phases', headerClass: 'color-header-5',
+                cellEditor: 'selectCellRenderer',
+                cellEditorParams: {
+                    'propertyRendered': 'area_option',
+                    'rowData': this.area_options,
+                    'columnDefs': [{ headerName: 'Other Areas', field: 'area_option' }]
+                }
+            },
+            { headerName: 'Material Name Phases', field: 'material_name_phases', headerClass: 'color-header-5',
+                cellEditor: 'selectCellRenderer',
+                cellEditorParams: function (param) {
+                    if (param.data.customer_type == 'Residential' ||
+                        param.data.customer_type == 'Builder' ||
+                        param.data.customer_type == 'COMMERCIAL Millwork' ||
+                        param.data.customer_type == 'COMMERCIAL GC' ||
+                        param.data.customer_type == 'Contractor HOUSE' ||
+                        param.data.customer_type == 'Contractor MD Showroom' ||
+                        param.data.customer_type == 'Kitchen & Bath House' ||
+                        param.data.customer_type == 'Kitchen & Bath MD Showroom') {
+                        return {
+                            'propertyRendered': 'material_name_area',
+                            'rowData': material_name_areas,
+                            'columnDefs': [{ headerName: 'Material Name', field: 'material_name_area' }]
+                        };
+                    }
+                    return {
+                        'propertyRendered': 'material_name_area',
+                        'rowData': material_names[param.data.customer_builder_name],
+                        'columnDefs': [{ headerName: 'Material Name', field: 'material_name_area' }]
+                    };
+                }
+            },
             { headerName: 'Material', field: 'material_phases', headerClass: 'color-header-5', valueGetter: this.materialGetter },
             { headerName: 'Brand', field: 'brand_phases', headerClass: 'color-header-5', valueGetter: this.brandGetter },
             { headerName: 'Level', field: 'level_phases', headerClass: 'color-header-5', valueGetter: this.levelGetter },
@@ -2643,8 +2673,38 @@ class ReportComponent {
             { headerName: 'Brand', field: 'brand_other_2', headerClass: 'color-header-4', valueGetter: this.brandGetter },
             { headerName: 'Level', field: 'level_other_2', headerClass: 'color-header-4', valueGetter: this.levelGetter },
             { headerName: 'Price', field: 'price_other_2', headerClass: 'color-header-4', valueGetter: this.priceGetter },
-            { headerName: 'Phases 2', field: 'phases_2', headerClass: 'color-header-5' },
-            { headerName: 'Material Name Phases 2', field: 'material_name_phases_2', headerClass: 'color-header-5' },
+            { headerName: 'Phases 2', field: 'phases_2', headerClass: 'color-header-5',
+                cellEditor: 'selectCellRenderer',
+                cellEditorParams: {
+                    'propertyRendered': 'area_option',
+                    'rowData': this.area_options,
+                    'columnDefs': [{ headerName: 'Other Areas', field: 'area_option' }]
+                }
+            },
+            { headerName: 'Material Name Phases 2', field: 'material_name_phases_2', headerClass: 'color-header-5',
+                cellEditor: 'selectCellRenderer',
+                cellEditorParams: function (param) {
+                    if (param.data.customer_type == 'Residential' ||
+                        param.data.customer_type == 'Builder' ||
+                        param.data.customer_type == 'COMMERCIAL Millwork' ||
+                        param.data.customer_type == 'COMMERCIAL GC' ||
+                        param.data.customer_type == 'Contractor HOUSE' ||
+                        param.data.customer_type == 'Contractor MD Showroom' ||
+                        param.data.customer_type == 'Kitchen & Bath House' ||
+                        param.data.customer_type == 'Kitchen & Bath MD Showroom') {
+                        return {
+                            'propertyRendered': 'material_name_area',
+                            'rowData': material_name_areas,
+                            'columnDefs': [{ headerName: 'Material Name', field: 'material_name_area' }]
+                        };
+                    }
+                    return {
+                        'propertyRendered': 'material_name_area',
+                        'rowData': material_names[param.data.customer_builder_name],
+                        'columnDefs': [{ headerName: 'Material Name', field: 'material_name_area' }]
+                    };
+                }
+            },
             { headerName: 'Material', field: 'material_phases_2', headerClass: 'color-header-5', valueGetter: this.materialGetter },
             { headerName: 'Brand', field: 'brand_phases_2', headerClass: 'color-header-5', valueGetter: this.brandGetter },
             { headerName: 'Level', field: 'level_phases_2', headerClass: 'color-header-5', valueGetter: this.levelGetter },
