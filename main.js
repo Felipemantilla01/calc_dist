@@ -168,10 +168,7 @@ __webpack_require__.r(__webpack_exports__);
 const environment = {
     production: false,
     // apiUrl: 'http://34.229.63.119:8080'
-    // apiUrl: 'http://localhost:8080',
-    // apiUrl: 'http://18.220.63.12:3000'
-    // apiUrl: 'http://18.219.248.98',
-    apiUrl: 'http://44.192.27.64'
+    apiUrl: 'http://localhost:8080',
 };
 /*
  * For easier debugging in development mode, you can import the following file
@@ -2711,48 +2708,70 @@ class ReportComponent {
             { headerName: 'Price', field: 'price_phases_2', headerClass: 'color-header-5', valueGetter: this.priceGetter },
             { headerName: 'STATE', field: 'state', headerClass: 'color-header-1',
                 cellEditorSelector: function (param) {
-                    if (param.data.customer_builder_name == 'Dan Ryan DE' ||
-                        param.data.customer_builder_name == 'Dan Ryan Metro' ||
-                        param.data.customer_builder_name == 'Pulte MADC' ||
-                        param.data.customer_builder_name == 'Pulte NEC') {
-                        return {
-                            component: 'selectCellRenderer'
-                        };
-                    }
-                    else {
-                        return {
-                            component: ''
-                        };
-                    }
+                    return {
+                        component: 'selectCellRenderer'
+                    };
                 },
                 cellEditorParams: function (param) {
                     let rowData;
-                    if (param.data.customer_builder_name == 'Dan Ryan DE') {
-                        rowData = [
-                            { state: 'DE' }
-                        ];
-                    }
-                    if (param.data.customer_builder_name == 'Dan Ryan Metro') {
-                        rowData = [
-                            { state: 'PA' },
-                            { state: 'MD' },
-                            { state: 'VA' },
-                        ];
-                    }
-                    if (param.data.customer_builder_name == 'Pulte MADC') {
-                        rowData = [
-                            { state: 'MD' },
-                            { state: 'VA' },
-                            { state: 'DC' }
-                        ];
-                    }
-                    if (param.data.customer_builder_name == 'Pulte NEC') {
-                        rowData = [
-                            { state: 'PA' },
-                            { state: 'NJ' },
-                            { state: 'DE' }
-                        ];
-                    }
+                    rowData = [
+                        { state: 'AL' },
+                        { state: 'AK' },
+                        { state: 'AZ' },
+                        { state: 'AR' },
+                        { state: 'CA' },
+                        { state: 'NC' },
+                        { state: 'SC' },
+                        { state: 'CO' },
+                        { state: 'CT' },
+                        { state: 'ND' },
+                        { state: 'SD' },
+                        { state: 'DE' },
+                        { state: 'FL' },
+                        { state: 'GA' },
+                        { state: 'HI' },
+                        { state: 'ID' },
+                        { state: 'IL' },
+                        { state: 'IN' },
+                        { state: 'IA' },
+                        { state: 'KS' },
+                        { state: 'KY' },
+                        { state: 'LA' },
+                        { state: 'ME' },
+                        { state: 'MD' },
+                        { state: 'MA' },
+                        { state: 'MI' },
+                        { state: 'MN' },
+                        { state: 'MS' },
+                        { state: 'MO' },
+                        { state: 'MT' },
+                        { state: 'NE' },
+                        { state: 'NV' },
+                        { state: 'NJ' },
+                        { state: 'NY' },
+                        { state: 'NH' },
+                        { state: 'NM' },
+                        { state: 'OH' },
+                        { state: 'OK' },
+                        { state: 'OR' },
+                        { state: 'PA' },
+                        { state: 'RI' },
+                        { state: 'TN' },
+                        { state: 'TX' },
+                        { state: 'UT' },
+                        { state: 'VT' },
+                        { state: 'VA' },
+                        { state: 'WV' },
+                        { state: 'WA' },
+                        { state: 'WI' },
+                        { state: 'WY' },
+                        { state: 'DC' },
+                        { state: 'GU' },
+                        { state: 'MP31' },
+                        { state: 'VI' },
+                        { state: 'PR' },
+                        { state: 'AS' },
+                    ];
                     return {
                         'propertyRendered': 'state',
                         'rowData': rowData,
