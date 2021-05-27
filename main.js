@@ -168,7 +168,10 @@ __webpack_require__.r(__webpack_exports__);
 const environment = {
     production: false,
     // apiUrl: 'http://34.229.63.119:8080'
-    apiUrl: 'http://localhost:8080',
+    // apiUrl: 'http://localhost:8080',
+    // apiUrl: 'http://18.220.63.12:3000'
+    // apiUrl: 'http://18.219.248.98',
+    apiUrl: 'http://44.192.27.64'
 };
 /*
  * For easier debugging in development mode, you can import the following file
