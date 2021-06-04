@@ -1933,7 +1933,7 @@ class ReportComponent {
         this.domLayout = 'autoHeight';
         this.rowSelection = 'multiple';
         this.job_status = [
-            { 'job_status': 'Complete' },
+            { 'job_status': 'Completed' },
             { 'job_status': 'Canceled' },
             { 'job_status': 'Incompleted and Re-scheduled' },
             { 'job_status': 'Incomplete (CSR Action Required)' },
@@ -2049,7 +2049,7 @@ class ReportComponent {
                 cellEditorParams: {
                     'propertyRendered': 'job_status',
                     'rowData': this.job_status,
-                    'columnDefs': [{ headerName: 'Job Status', field: 'job_status' }]
+                    'columnDefs': [{ headerName: 'Job Status', field: 'job_status', filter: 'agTextColumnFilter' }]
                 }
             },
             { headerName: 'Customer Type', field: 'customer_type', headerClass: 'color-header-1',
@@ -2057,7 +2057,7 @@ class ReportComponent {
                 cellEditorParams: {
                     'propertyRendered': 'customer_type',
                     'rowData': this.customer_types,
-                    'columnDefs': [{ headerName: 'Customer Type', field: 'customer_type' }]
+                    'columnDefs': [{ headerName: 'Customer Type', field: 'customer_type', filter: 'agTextColumnFilter' }]
                 }
             },
             { headerName: 'Customer(Builder Name)', field: 'customer_builder_name', headerClass: 'color-header-1',
@@ -2232,7 +2232,7 @@ class ReportComponent {
                     return {
                         'propertyRendered': 'customer_builder_name',
                         'rowData': rowData,
-                        'columnDefs': [{ headerName: 'Customer(Builder Name)', field: 'customer_builder_name' }]
+                        'columnDefs': [{ headerName: 'Customer(Builder Name)', field: 'customer_builder_name', filter: 'agTextColumnFilter' }]
                     };
                 }
             },
@@ -2519,7 +2519,7 @@ class ReportComponent {
                     return {
                         'propertyRendered': 'customer_job_area',
                         'rowData': rowData,
-                        'columnDefs': [{ headerName: 'Customer Job Area', field: 'customer_job_area' }]
+                        'columnDefs': [{ headerName: 'Customer Job Area', field: 'customer_job_area', filter: 'agTextColumnFilter' }]
                     };
                 }
             },
@@ -2528,7 +2528,7 @@ class ReportComponent {
                 cellEditorParams: {
                     'propertyRendered': 'material_name',
                     'rowData': this.material_options,
-                    'columnDefs': [{ headerName: 'Material name', field: 'material_name' }]
+                    'columnDefs': [{ headerName: 'Material name', field: 'material_name', filter: 'agTextColumnFilter' }]
                 }
             },
             { headerName: 'AREA 1', field: 'area_1', headerClass: 'color-header-2',
@@ -2536,7 +2536,7 @@ class ReportComponent {
                 cellEditorParams: {
                     'propertyRendered': 'area_option',
                     'rowData': this.area_options,
-                    'columnDefs': [{ headerName: 'AREA 1', field: 'area_option' }]
+                    'columnDefs': [{ headerName: 'AREA 1', field: 'area_option', filter: 'agTextColumnFilter' }]
                 }
             },
             { headerName: 'Material Name Area 1', field: 'material_name_area_1', headerClass: 'color-header-2',
@@ -2553,7 +2553,7 @@ class ReportComponent {
                         return {
                             'propertyRendered': 'material_name_area',
                             'rowData': material_name_areas,
-                            'columnDefs': [{ headerName: 'Material Name', field: 'material_name_area' }]
+                            'columnDefs': [{ headerName: 'Material Name', field: 'material_name_area', filter: 'agTextColumnFilter' }]
                         };
                     }
                     return {
@@ -2572,7 +2572,7 @@ class ReportComponent {
                 cellEditorParams: {
                     'propertyRendered': 'area_option',
                     'rowData': this.area_options,
-                    'columnDefs': [{ headerName: 'AREA 2', field: 'area_option' }]
+                    'columnDefs': [{ headerName: 'AREA 2', field: 'area_option', filter: 'agTextColumnFilter' }]
                 }
             },
             { headerName: 'Material Name Area', field: 'material_name_area_2', headerClass: 'color-header-3',
@@ -2595,7 +2595,7 @@ class ReportComponent {
                     return {
                         'propertyRendered': 'material_name_area',
                         'rowData': material_names[param.data.customer_builder_name],
-                        'columnDefs': [{ headerName: 'Material Name', field: 'material_name_area' }]
+                        'columnDefs': [{ headerName: 'Material Name', field: 'material_name_area', filter: 'agTextColumnFilter' }]
                     };
                 }
             },
@@ -2608,7 +2608,7 @@ class ReportComponent {
                 cellEditorParams: {
                     'propertyRendered': 'area_option',
                     'rowData': this.area_options,
-                    'columnDefs': [{ headerName: 'Other Areas', field: 'area_option' }]
+                    'columnDefs': [{ headerName: 'Other Areas', field: 'area_option', filter: 'agTextColumnFilter' }]
                 }
             },
             { headerName: 'Material Name Areas', field: 'material_name_area_other', headerClass: 'color-header-4',
@@ -2625,7 +2625,7 @@ class ReportComponent {
                         return {
                             'propertyRendered': 'material_name_area',
                             'rowData': material_name_areas,
-                            'columnDefs': [{ headerName: 'Material Name', field: 'material_name_area' }]
+                            'columnDefs': [{ headerName: 'Material Name', field: 'material_name_area', filter: 'agTextColumnFilter' }]
                         };
                     }
                     return {
@@ -2644,7 +2644,7 @@ class ReportComponent {
                 cellEditorParams: {
                     'propertyRendered': 'area_option',
                     'rowData': this.area_options,
-                    'columnDefs': [{ headerName: 'Other Areas', field: 'area_option' }]
+                    'columnDefs': [{ headerName: 'Other Areas', field: 'area_option', filter: 'agTextColumnFilter' }]
                 }
             },
             { headerName: 'Material Name Phases', field: 'material_name_phases', headerClass: 'color-header-5',
@@ -2661,7 +2661,7 @@ class ReportComponent {
                         return {
                             'propertyRendered': 'material_name_area',
                             'rowData': material_name_areas,
-                            'columnDefs': [{ headerName: 'Material Name', field: 'material_name_area' }]
+                            'columnDefs': [{ headerName: 'Material Name', field: 'material_name_area', filter: 'agTextColumnFilter' }]
                         };
                     }
                     return {
@@ -2680,7 +2680,7 @@ class ReportComponent {
                 cellEditorParams: {
                     'propertyRendered': 'area_option',
                     'rowData': this.area_options,
-                    'columnDefs': [{ headerName: 'Other AREA 2', field: 'area_option' }]
+                    'columnDefs': [{ headerName: 'Other AREA 2', field: 'area_option', filter: 'agTextColumnFilter' }]
                 }
             },
             { headerName: 'Material Name Areas 2', field: 'material_name_area_other_2', headerClass: 'color-header-4',
@@ -2697,13 +2697,13 @@ class ReportComponent {
                         return {
                             'propertyRendered': 'material_name_area',
                             'rowData': material_name_areas,
-                            'columnDefs': [{ headerName: 'Material Name', field: 'material_name_area' }]
+                            'columnDefs': [{ headerName: 'Material Name', field: 'material_name_area', filter: 'agTextColumnFilter' }]
                         };
                     }
                     return {
                         'propertyRendered': 'material_name_area',
                         'rowData': material_names[param.data.customer_builder_name],
-                        'columnDefs': [{ headerName: 'Material Name', field: 'material_name_area' }]
+                        'columnDefs': [{ headerName: 'Material Name', field: 'material_name_area', filter: 'agTextColumnFilter' }]
                     };
                 }
             },
@@ -2716,7 +2716,7 @@ class ReportComponent {
                 cellEditorParams: {
                     'propertyRendered': 'area_option',
                     'rowData': this.area_options,
-                    'columnDefs': [{ headerName: 'Other Areas', field: 'area_option' }]
+                    'columnDefs': [{ headerName: 'Other Areas', field: 'area_option', filter: 'agTextColumnFilter' }]
                 }
             },
             { headerName: 'Material Name Phases 2', field: 'material_name_phases_2', headerClass: 'color-header-5',
@@ -2733,7 +2733,7 @@ class ReportComponent {
                         return {
                             'propertyRendered': 'material_name_area',
                             'rowData': material_name_areas,
-                            'columnDefs': [{ headerName: 'Material Name', field: 'material_name_area' }]
+                            'columnDefs': [{ headerName: 'Material Name', field: 'material_name_area', filter: 'agTextColumnFilter' }]
                         };
                     }
                     return {
@@ -2816,7 +2816,7 @@ class ReportComponent {
                     return {
                         'propertyRendered': 'state',
                         'rowData': rowData,
-                        'columnDefs': [{ headerName: 'State', field: 'state' }]
+                        'columnDefs': [{ headerName: 'State', field: 'state', filter: 'agTextColumnFilter' }]
                     };
                 }
             },
@@ -2827,7 +2827,7 @@ class ReportComponent {
                 cellEditorParams: {
                     'propertyRendered': 'installer_option',
                     'rowData': this.installer_options,
-                    'columnDefs': [{ headerName: 'Installer', field: 'installer_option' }]
+                    'columnDefs': [{ headerName: 'Installer', field: 'installer_option', filter: 'agTextColumnFilter' }]
                 }
             },
             { headerName: 'MW CAD SQFT(Kitchen)', field: 'mw_cad_sqft_kitchen', headerClass: 'color-header-1' },
@@ -2909,7 +2909,23 @@ class ReportComponent {
             // flex: 1,
             minWidth: 50,
             editable: true,
-            resizable: true
+            resizable: true,
+            suppressKeyboardEvent: params => {
+                if (!params.editing) {
+                    let isDeleteKey = params.event.keyCode === 46;
+                    // Delete selected rows with back space
+                    if (isDeleteKey) {
+                        const selectedRows = params.api.getSelectedRows();
+                        params.api.applyTransaction({ remove: selectedRows });
+                        selectedRows.map(row => {
+                            this.comparisonService.delete(row.id).subscribe(res => {
+                                console.log(res);
+                            });
+                        });
+                        return true;
+                    }
+                }
+            }
         };
         this.rowData = [];
         this.components = {
@@ -3805,6 +3821,9 @@ class ComparisonService {
     addNew() {
         return this.httpClient.post(`${_environments_environment__WEBPACK_IMPORTED_MODULE_1__["environment"].apiUrl}/api/comparisons/addnew`, null);
     }
+    delete(id) {
+        return this.httpClient.delete(`${_environments_environment__WEBPACK_IMPORTED_MODULE_1__["environment"].apiUrl}/api/comparisons/delete/${id}`);
+    }
 }
 ComparisonService.ɵfac = function ComparisonService_Factory(t) { return new (t || ComparisonService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"])); };
 ComparisonService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({ token: ComparisonService, factory: ComparisonService.ɵfac, providedIn: 'root' });
@@ -4280,7 +4299,8 @@ class AutoCompleteComponent {
             type: 'contains',
             filter: this.inputValue,
         });
-        this.columnFilter.onFilterChanged();
+        // this.columnFilter.onFilterChanged();
+        this.gridApi.onFilterChanged();
         if (this.gridApi.getDisplayedRowAtIndex(0)) {
             this.gridApi.getDisplayedRowAtIndex(0).setSelected(true);
             this.gridApi.ensureIndexVisible(0, 'top');
