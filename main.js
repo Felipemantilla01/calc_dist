@@ -2913,6 +2913,7 @@ class ReportComponent {
             suppressKeyboardEvent: params => {
                 if (!params.editing) {
                     let isDeleteKey = params.event.keyCode === 46;
+                    let isBackspaceKey = params.event.keyCode === 8;
                     // Delete selected rows with back space
                     if (isDeleteKey) {
                         const selectedRows = params.api.getSelectedRows();
@@ -2923,6 +2924,11 @@ class ReportComponent {
                             });
                         });
                         return true;
+                    }
+                    if (isBackspaceKey) {
+                        const cell = params.api.getFocusedCell();
+                        const id = cell.column.colId;
+                        const row = cell.rowIndex;
                     }
                 }
             }
@@ -3238,7 +3244,7 @@ ReportComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineCo
     } if (rf & 2) {
         var _t;
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵloadQuery"]()) && (ctx.reportTable = _t.first);
-    } }, decls: 3, vars: 3, consts: [["class", "warning-message", 4, "ngIf"], [4, "ngIf"], [1, "warning-message"], ["enableCellTextSelection", "true", 1, "ag-theme-alpine", 2, "width", "100vw", "height", "80vh", 3, "rowData", "columnDefs", "defaultColDef", "components", "frameworkComponents", "rowSelection", "cellValueChanged", "pasteStart", "pasteEnd", "gridReady"], ["reportTable", ""], [1, "btn", "btn-primary", 3, "click"]], template: function ReportComponent_Template(rf, ctx) { if (rf & 1) {
+    } }, decls: 3, vars: 3, consts: [["class", "warning-message", 4, "ngIf"], [4, "ngIf"], [1, "warning-message"], ["enableCellTextSelection", "true", 1, "ag-theme-alpine", 2, "width", "99vw", "height", "80vh", 3, "rowData", "columnDefs", "defaultColDef", "components", "frameworkComponents", "rowSelection", "cellValueChanged", "pasteStart", "pasteEnd", "gridReady"], ["reportTable", ""], [1, "btn", "btn-primary", 3, "click"]], template: function ReportComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](0, ReportComponent_p_0_Template, 4, 0, "p", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](1, ReportComponent_div_1_Template, 2, 0, "div", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](2, ReportComponent_div_2_Template, 5, 6, "div", 1);
@@ -3248,7 +3254,7 @@ ReportComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineCo
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx.rowData.length === 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx.rowData.length !== 0);
-    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_10__["NgIf"], ag_grid_angular__WEBPACK_IMPORTED_MODULE_11__["AgGridAngular"]], styles: [".warning-message[_ngcontent-%COMP%] {\n  background-color: #f8d7da;\n  border: 1px solid;\n  border-color: #f5c6cb;\n  border-radius: 0.25rem;\n  margin: 20px;\n  padding: 0.75rem 1.25rem;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL2Rldi9Eb2N1bWVudHMvY2FsY3VsYXRpb25fcmVwb3J0L2FuZ3VsYXItMTAtYmFzaWMtYXV0aGVudGljYXRpb24tZXhhbXBsZS1tYXN0ZXIvc3JjL2FwcC9yZXBvcnQvcmVwb3J0LmNvbXBvbmVudC5sZXNzIiwic3JjL2FwcC9yZXBvcnQvcmVwb3J0LmNvbXBvbmVudC5sZXNzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0kseUJBQUE7RUFDQSxpQkFBQTtFQUNBLHFCQUFBO0VBQ0Esc0JBQUE7RUFDQSxZQUFBO0VBQ0Esd0JBQUE7QUNDSiIsImZpbGUiOiJzcmMvYXBwL3JlcG9ydC9yZXBvcnQuY29tcG9uZW50Lmxlc3MiLCJzb3VyY2VzQ29udGVudCI6WyIud2FybmluZy1tZXNzYWdle1xuICAgIGJhY2tncm91bmQtY29sb3I6ICNmOGQ3ZGE7XG4gICAgYm9yZGVyOiAxcHggc29saWQ7XG4gICAgYm9yZGVyLWNvbG9yOiAjZjVjNmNiO1xuICAgIGJvcmRlci1yYWRpdXM6IDAuMjVyZW07XG4gICAgbWFyZ2luOiAyMHB4O1xuICAgIHBhZGRpbmc6IDAuNzVyZW0gMS4yNXJlbTtcbn0iLCIud2FybmluZy1tZXNzYWdlIHtcbiAgYmFja2dyb3VuZC1jb2xvcjogI2Y4ZDdkYTtcbiAgYm9yZGVyOiAxcHggc29saWQ7XG4gIGJvcmRlci1jb2xvcjogI2Y1YzZjYjtcbiAgYm9yZGVyLXJhZGl1czogMC4yNXJlbTtcbiAgbWFyZ2luOiAyMHB4O1xuICBwYWRkaW5nOiAwLjc1cmVtIDEuMjVyZW07XG59XG4iXX0= */"] });
+    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_10__["NgIf"], ag_grid_angular__WEBPACK_IMPORTED_MODULE_11__["AgGridAngular"]], styles: [".warning-message[_ngcontent-%COMP%] {\n  background-color: #f8d7da;\n  border: 1px solid;\n  border-color: #f5c6cb;\n  border-radius: 0.25rem;\n  margin: 20px;\n  width: 90%;\n  padding: 0.75rem 1.25rem;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL2Rldi9Eb2N1bWVudHMvY2FsY3VsYXRpb25fcmVwb3J0L2FuZ3VsYXItMTAtYmFzaWMtYXV0aGVudGljYXRpb24tZXhhbXBsZS1tYXN0ZXIvc3JjL2FwcC9yZXBvcnQvcmVwb3J0LmNvbXBvbmVudC5sZXNzIiwic3JjL2FwcC9yZXBvcnQvcmVwb3J0LmNvbXBvbmVudC5sZXNzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0kseUJBQUE7RUFDQSxpQkFBQTtFQUNBLHFCQUFBO0VBQ0Esc0JBQUE7RUFDQSxZQUFBO0VBQ0EsVUFBQTtFQUNBLHdCQUFBO0FDQ0oiLCJmaWxlIjoic3JjL2FwcC9yZXBvcnQvcmVwb3J0LmNvbXBvbmVudC5sZXNzIiwic291cmNlc0NvbnRlbnQiOlsiLndhcm5pbmctbWVzc2FnZXtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjZjhkN2RhO1xuICAgIGJvcmRlcjogMXB4IHNvbGlkO1xuICAgIGJvcmRlci1jb2xvcjogI2Y1YzZjYjtcbiAgICBib3JkZXItcmFkaXVzOiAwLjI1cmVtO1xuICAgIG1hcmdpbjogMjBweDtcbiAgICB3aWR0aDogOTAlO1xuICAgIHBhZGRpbmc6IDAuNzVyZW0gMS4yNXJlbTtcbn0iLCIud2FybmluZy1tZXNzYWdlIHtcbiAgYmFja2dyb3VuZC1jb2xvcjogI2Y4ZDdkYTtcbiAgYm9yZGVyOiAxcHggc29saWQ7XG4gIGJvcmRlci1jb2xvcjogI2Y1YzZjYjtcbiAgYm9yZGVyLXJhZGl1czogMC4yNXJlbTtcbiAgbWFyZ2luOiAyMHB4O1xuICB3aWR0aDogOTAlO1xuICBwYWRkaW5nOiAwLjc1cmVtIDEuMjVyZW07XG59XG4iXX0= */"] });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵsetClassMetadata"](ReportComponent, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"],
         args: [{
@@ -4249,9 +4255,15 @@ class AutoCompleteComponent {
         this.params.api.stopEditing();
     }
     rowConfirmed() {
-        if (this.gridApi.getSelectedRows()[0]) {
+        if (this.inputValue == "") {
+            this.selectedObject = new Map();
+            this.selectedObject[this.propertyName] = "";
+            this.isCanceled = false;
+        }
+        else if (this.gridApi.getSelectedRows()[0]) {
             this.selectedObject = this.gridApi.getSelectedRows()[0];
             this.isCanceled = false;
+            console.log(this.selectedObject);
         }
         this.params.api.stopEditing();
     }
