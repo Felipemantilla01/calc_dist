@@ -2999,20 +2999,20 @@ class ReportComponent {
             params.data.customer_type.toLowerCase() == 'Contractor MD Showroom'.toLowerCase() ||
             params.data.customer_type.toLowerCase() == 'Kitchen & Bath HOUSE'.toLowerCase() ||
             params.data.customer_type.toLowerCase() == 'Kitchen & Bath MD Showroom'.toLowerCase() ||
-            params.data.customer_builder_name.toLowerCase() == 'Floormax'.toLowerCase()) {
+            (params.data.customer_builder_name || '').toLowerCase() == 'Floormax'.toLowerCase()) {
             let lookup = lodash__WEBPACK_IMPORTED_MODULE_3__["find"](materials, function (o) {
                 if (params.colDef.field == 'material_1')
-                    return o.title.toLowerCase() == params.data.material_name_area_1.toLowerCase();
+                    return o.title.toLowerCase() == (params.data.material_name_area_1 || '').toLowerCase();
                 if (params.colDef.field == 'material_2')
-                    return o.title.toLowerCase() == params.data.material_name_area_2.toLowerCase();
+                    return o.title.toLowerCase() == (params.data.material_name_area_2 || '').toLowerCase();
                 if (params.colDef.field == 'material_other')
-                    return o.title.toLowerCase() == params.data.material_name_area_other.toLowerCase();
+                    return o.title.toLowerCase() == (params.data.material_name_area_other || '').toLowerCase();
                 if (params.colDef.field == 'material_phases')
-                    return o.title.toLowerCase() == params.data.material_name_phases.toLowerCase();
+                    return o.title.toLowerCase() == (params.data.material_name_phases || '').toLowerCase();
                 if (params.colDef.field == 'material_other_2')
-                    return o.title.toLowerCase() == params.data.material_name_area_other_2.toLowerCase();
+                    return o.title.toLowerCase() == (params.data.material_name_area_other_2 || '').toLowerCase();
                 if (params.colDef.field == 'material_phases_2')
-                    return o.title.toLowerCase() == params.data.material_name_phases_2.toLowerCase();
+                    return o.title.toLowerCase() == (params.data.material_name_phases_2 || '').toLowerCase();
             });
             if (lookup) {
                 return lookup.material;
@@ -3033,7 +3033,7 @@ class ReportComponent {
                 substitute = params.data.customer_builder_name + params.data.material_name_area_other_2;
             if (params.colDef.field == 'material_phases_2')
                 substitute = params.data.customer_builder_name + params.data.material_name_phases_2;
-            substitute = substitute.replaceAll(" ", "");
+            substitute = substitute.toString().replaceAll(" ", "");
             let lookup = lodash__WEBPACK_IMPORTED_MODULE_3__["find"](prices, function (o) {
                 return o.conct.toLowerCase() == substitute.toLowerCase();
             });
@@ -3066,20 +3066,20 @@ class ReportComponent {
             params.data.customer_type.toLowerCase() == 'Contractor MD Showroom'.toLowerCase() ||
             params.data.customer_type.toLowerCase() == 'Kitchen & Bath HOUSE'.toLowerCase() ||
             params.data.customer_type.toLowerCase() == 'Kitchen & Bath MD Showroom'.toLowerCase() ||
-            params.data.customer_builder_name.toLowerCase() == 'Floormax'.toLowerCase()) {
+            (params.data.customer_builder_name || '').toLowerCase() == 'Floormax'.toLowerCase()) {
             let lookup = lodash__WEBPACK_IMPORTED_MODULE_3__["find"](materials, function (o) {
                 if (params.colDef.field == "brand_1")
-                    return o.title.toLowerCase() == params.data.material_name_area_1.toLowerCase();
+                    return o.title.toLowerCase() == (params.data.material_name_area_1 || '').toLowerCase();
                 if (params.colDef.field == "brand_2")
-                    return o.title.toLowerCase() == params.data.material_name_area_2.toLowerCase();
+                    return o.title.toLowerCase() == (params.data.material_name_area_2 || '').toLowerCase();
                 if (params.colDef.field == "brand_other")
-                    return o.title.toLowerCase() == params.data.material_name_area_other.toLowerCase();
+                    return o.title.toLowerCase() == (params.data.material_name_area_other || '').toLowerCase();
                 if (params.colDef.field == "brand_phases")
-                    return o.title.toLowerCase() == params.data.material_name_phases.toLowerCase();
+                    return o.title.toLowerCase() == (params.data.material_name_phases || '').toLowerCase();
                 if (params.colDef.field == "brand_other_2")
-                    return o.title.toLowerCase() == params.data.material_name_area_other_2.toLowerCase();
+                    return o.title.toLowerCase() == (params.data.material_name_area_other_2 || '').toLowerCase();
                 if (params.colDef.field == "brand_phases_2")
-                    return o.title.toLowerCase() == params.data.material_name_phases_2.toLowerCase();
+                    return o.title.toLowerCase() == (params.data.material_name_phases_2 || '').toLowerCase();
             });
             if (lookup) {
                 return lookup.material_type;
@@ -3100,7 +3100,7 @@ class ReportComponent {
                 substitute = params.data.customer_builder_name + params.data.material_name_area_other_2;
             if (params.colDef.field == "brand_phases_2")
                 substitute = params.data.customer_builder_name + params.data.material_name_phases_2;
-            substitute = substitute.replaceAll(" ", "");
+            substitute = substitute.toString().replaceAll(" ", "");
             let lookup = lodash__WEBPACK_IMPORTED_MODULE_3__["find"](prices, function (o) {
                 return o.conct.toLowerCase() == substitute.toLowerCase();
             });
@@ -3135,7 +3135,7 @@ class ReportComponent {
             params.data.customer_type.toLowerCase() == 'Contractor MD Showroom'.toLowerCase() ||
             params.data.customer_type.toLowerCase() == 'Kitchen & Bath HOUSE'.toLowerCase() ||
             params.data.customer_type.toLowerCase() == 'Kitchen & Bath MD Showroom'.toLowerCase() ||
-            params.data.customer_builder_name.toLowerCase() == 'Floormax'.toLowerCase()) {
+            (params.data.customer_builder_name || '').toLowerCase() == 'Floormax'.toLowerCase()) {
             return 'Select Level';
         }
         else {
@@ -3152,7 +3152,7 @@ class ReportComponent {
                 substitute = params.data.customer_builder_name + params.data.material_name_area_other_2;
             if (params.colDef.field == "level_phases_2")
                 substitute = params.data.customer_builder_name + params.data.material_name_phases_2;
-            substitute = substitute.replaceAll(" ", "");
+            substitute = substitute.toString().replaceAll(" ", "");
             let lookup = lodash__WEBPACK_IMPORTED_MODULE_3__["find"](prices, function (o) {
                 return o.conct.toLowerCase() == substitute.toLowerCase();
             });
@@ -3187,7 +3187,7 @@ class ReportComponent {
             params.data.customer_type.toLowerCase() == 'Contractor MD Showroom'.toLowerCase() ||
             params.data.customer_type.toLowerCase() == 'Kitchen & Bath HOUSE'.toLowerCase() ||
             params.data.customer_type.toLowerCase() == 'Kitchen & Bath MD Showroom'.toLowerCase() ||
-            params.data.customer_builder_name.toLowerCase() == 'Floormax'.toLowerCase()) {
+            (params.data.customer_builder_name || '').toLowerCase() == 'Floormax'.toLowerCase()) {
             return 'Not defined';
         }
         else {
@@ -3204,7 +3204,7 @@ class ReportComponent {
                 substitute = params.data.customer_builder_name + params.data.material_name_area_other_2;
             if (params.colDef.field == "price_phases_2")
                 substitute = params.data.customer_builder_name + params.data.material_name_phases_2;
-            substitute = substitute.replaceAll(" ", "");
+            substitute = substitute.toString().replaceAll(" ", "");
             let lookup = lodash__WEBPACK_IMPORTED_MODULE_3__["find"](prices, function (o) {
                 return o.conct.toLowerCase() == substitute.toLowerCase();
             });
