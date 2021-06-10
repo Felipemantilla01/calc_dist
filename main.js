@@ -2559,7 +2559,7 @@ class ReportComponent {
                     return {
                         'propertyRendered': 'material_name_area',
                         'rowData': material_names[param.data.customer_builder_name],
-                        'columnDefs': [{ headerName: 'Material Name', field: 'material_name_area' }]
+                        'columnDefs': [{ headerName: 'Material Name', field: 'material_name_area', filter: 'agTextColumnFilter' }]
                     };
                 }
             },
@@ -2589,7 +2589,7 @@ class ReportComponent {
                         return {
                             'propertyRendered': 'material_name_area',
                             'rowData': material_name_areas,
-                            'columnDefs': [{ headerName: 'Material Name', field: 'material_name_area' }]
+                            'columnDefs': [{ headerName: 'Material Name', field: 'material_name_area', filter: 'agTextColumnFilter' }]
                         };
                     }
                     return {
@@ -2631,7 +2631,7 @@ class ReportComponent {
                     return {
                         'propertyRendered': 'material_name_area',
                         'rowData': material_names[param.data.customer_builder_name],
-                        'columnDefs': [{ headerName: 'Material Name', field: 'material_name_area' }]
+                        'columnDefs': [{ headerName: 'Material Name', field: 'material_name_area', filter: 'agTextColumnFilter' }]
                     };
                 }
             },
@@ -2667,7 +2667,7 @@ class ReportComponent {
                     return {
                         'propertyRendered': 'material_name_area',
                         'rowData': material_names[param.data.customer_builder_name],
-                        'columnDefs': [{ headerName: 'Material Name', field: 'material_name_area' }]
+                        'columnDefs': [{ headerName: 'Material Name', field: 'material_name_area', filter: 'agTextColumnFilter' }]
                     };
                 }
             },
@@ -2739,7 +2739,7 @@ class ReportComponent {
                     return {
                         'propertyRendered': 'material_name_area',
                         'rowData': material_names[param.data.customer_builder_name],
-                        'columnDefs': [{ headerName: 'Material Name', field: 'material_name_area' }]
+                        'columnDefs': [{ headerName: 'Material Name', field: 'material_name_area', filter: 'agTextColumnFilter' }]
                     };
                 }
             },
