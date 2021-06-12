@@ -2109,7 +2109,9 @@ class ReportComponent {
                             { 'customer_builder_name': 'Pulte NEC' },
                             { 'customer_builder_name': 'Rachuba Group' },
                             { 'customer_builder_name': 'Stanley Martin' },
-                            { 'customer_builder_name': 'Triumph' }
+                            { 'customer_builder_name': 'Triumph' },
+                            { 'customer_builder_name': 'Pulte NEC - Link at Wesmont Station (7281)' },
+                            { 'customer_builder_name': 'Stanley Martin - Riverfront at West Hyatsville TH' }
                         ];
                     }
                     if (param.data.customer_type == 'COMMERCIAL GC') {
@@ -2155,6 +2157,9 @@ class ReportComponent {
                             { 'customer_builder_name': 'Wohlsen Construction:Essilor Optical' },
                             { 'customer_builder_name': 'Wohlsen Construction:Solera Reserve' },
                             { 'customer_builder_name': 'WCS CONSTRUCTION-AIA' },
+                            { 'customer_builder_name': 'Quartz - Daltile Ash Grey 2CM & NQ06 Calacatta' },
+                            { 'customer_builder_name': 'Granite White Mountain' },
+                            { 'customer_builder_name': 'Whiting Turner - Quartz NQ12 Statuary' },
                         ];
                     }
                     if (param.data.customer_type == 'COMMERCIAL Millwork') {
@@ -2169,7 +2174,8 @@ class ReportComponent {
                             { 'customer_builder_name': 'Mortensen Woodwork-AIA' },
                             { 'customer_builder_name': 'New Era Custom Design & Cabinet' },
                             { 'customer_builder_name': 'Potomac Architectural Millwork Corp.' },
-                            { 'customer_builder_name': 'Washington Woodworking CO' }
+                            { 'customer_builder_name': 'Washington Woodworking CO' },
+                            { 'customer_builder_name': 'Potomac Architechtural Millwork - Opustone Black Absolute' }
                         ];
                     }
                     if (param.data.customer_type == 'Contractor HOUSE') {
@@ -2206,7 +2212,9 @@ class ReportComponent {
                             { 'customer_builder_name': 'R O Hutchinson LLC' },
                             { 'customer_builder_name': 'Tropea Restoration, Inc' },
                             { 'customer_builder_name': 'CRP Contracting, LLC' },
-                            { 'customer_builder_name': 'Allen Sexton - Deposit Required' }
+                            { 'customer_builder_name': 'Allen Sexton - Deposit Required' },
+                            { 'customer_builder_name': 'Thermal Marketing System' },
+                            { 'customer_builder_name': 'AJ Home Improvement' }
                         ];
                     }
                     if (param.data.customer_type == 'Kitchen & Bath HOUSE') {
@@ -2217,11 +2225,6 @@ class ReportComponent {
                     if (param.data.customer_type == 'Kitchen & Bath MD Showroom') {
                         rowData = [
                             { 'customer_builder_name': 'Phil Lazas Contracting LLC' }
-                        ];
-                    }
-                    if (param.data.customer_type == 'Contractor MD Showroom') {
-                        rowData = [
-                            { 'customer_builder_name': 'AJ Home Improvement' }
                         ];
                     }
                     if (param.data.customer_type == 'Contractor HOUSE') {
