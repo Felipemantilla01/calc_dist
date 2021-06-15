@@ -2110,8 +2110,6 @@ class ReportComponent {
                             { 'customer_builder_name': 'Rachuba Group' },
                             { 'customer_builder_name': 'Stanley Martin' },
                             { 'customer_builder_name': 'Triumph' },
-                            { 'customer_builder_name': 'Pulte NEC - Link at Wesmont Station (7281)' },
-                            { 'customer_builder_name': 'Stanley Martin - Riverfront at West Hyatsville TH' }
                         ];
                     }
                     if (param.data.customer_type == 'COMMERCIAL GC') {
@@ -2157,9 +2155,7 @@ class ReportComponent {
                             { 'customer_builder_name': 'Wohlsen Construction:Essilor Optical' },
                             { 'customer_builder_name': 'Wohlsen Construction:Solera Reserve' },
                             { 'customer_builder_name': 'WCS CONSTRUCTION-AIA' },
-                            { 'customer_builder_name': 'Quartz - Daltile Ash Grey 2CM & NQ06 Calacatta' },
-                            { 'customer_builder_name': 'Granite White Mountain' },
-                            { 'customer_builder_name': 'Whiting Turner - Quartz NQ12 Statuary' },
+                            { 'customer_builder_name': 'THERRIEN WADDELL' }
                         ];
                     }
                     if (param.data.customer_type == 'COMMERCIAL Millwork') {
@@ -2495,13 +2491,15 @@ class ReportComponent {
                             { 'customer_job_area': 'Northeast Corridor Division' },
                             { 'customer_job_area': 'Reserve at North Caldwell (6397)' },
                             { 'customer_job_area': 'Valley Forge Greene' },
-                            { 'customer_job_area': 'Whitehall Estates (6904)' }
+                            { 'customer_job_area': 'Whitehall Estates (6904)' },
+                            { 'customer_job_area': 'Link at Wesmont Station(7281)' }
                         ];
                     }
                     if (param.data.customer_builder_name == 'Stanley Martin') {
                         rowData = [
                             { 'customer_job_area': 'Marlboro Pointe (MP)' },
-                            { 'customer_job_area': 'Marlboro Riding (MR)' }
+                            { 'customer_job_area': 'Marlboro Riding (MR)' },
+                            { 'customer_job_area': 'Riverfront at West Hyatsville TH' }
                         ];
                     }
                     if (param.data.customer_builder_name == 'AJ Home Improvement') {
