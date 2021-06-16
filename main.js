@@ -2457,7 +2457,8 @@ class ReportComponent {
                     if (param.data.customer_builder_name == 'Pegasus') {
                         rowData = [
                             { 'customer_job_area': 'Trails at Short Pump (TSP)' },
-                            { 'customer_job_area': 'Villages at West Laurel (VWL)' }
+                            { 'customer_job_area': 'Villages at West Laurel (VWL)' },
+                            { 'customer_job_area': 'Belvedere' }
                         ];
                     }
                     if (param.data.customer_builder_name == 'POWERS HOMES') {
