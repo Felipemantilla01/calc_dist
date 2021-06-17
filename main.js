@@ -2259,7 +2259,8 @@ class ReportComponent {
                         param.data.customer_builder_name == 'Stanley Martin' ||
                         param.data.customer_builder_name == 'AJ Home Improvement' ||
                         param.data.customer_builder_name == 'DELUCA HOMES' ||
-                        param.data.customer_builder_name == 'DMR - PDR') {
+                        param.data.customer_builder_name == 'DMR - PDR' ||
+                        param.data.customer_builder_name == 'Grand Villa Homes') {
                         return {
                             component: 'selectCellRenderer'
                         };
@@ -2294,7 +2295,8 @@ class ReportComponent {
                             { 'customer_job_area': 'Greens at Willowsford (GW)' },
                             { 'customer_job_area': 'Hunter at Haymarket' },
                             { 'customer_job_area': 'Potomac Shores' },
-                            { 'customer_job_area': 'Grove North at Willowsford - 15A (GNW)' }
+                            { 'customer_job_area': 'Grove North at Willowsford - 15A (GNW)' },
+                            { 'customer_job_area': 'Columbia Pike(Morrison) (CP)' }
                         ];
                     }
                     if (param.data.customer_builder_name == 'Caruso MD') {
@@ -2316,7 +2318,8 @@ class ReportComponent {
                             { 'customer_job_area': 'Southern Hills (SH)' },
                             { 'customer_job_area': 'Windsor Manor (WM)' },
                             { 'customer_job_area': 'Woodburn Estates (WE)' },
-                            { 'customer_job_area': 'Main Office MO' }
+                            { 'customer_job_area': 'Main Office MO' },
+                            { 'customer_job_area': 'Radcliffe Reserve' },
                         ];
                     }
                     if (param.data.customer_builder_name == 'Creative Homes') {
@@ -2358,7 +2361,8 @@ class ReportComponent {
                             { 'customer_job_area': 'West Shores at New Milford (WS)' },
                             { 'customer_job_area': 'Willowwood (WW)' },
                             { 'customer_job_area': 'Windstone' },
-                            { 'customer_job_area': 'Woodfield Preserve (WP)' }
+                            { 'customer_job_area': 'Woodfield Preserve (WP)' },
+                            { 'customer_job_area': 'Hunt Club South' }
                         ];
                     }
                     if (param.data.customer_builder_name == 'Gemcraft') {
@@ -2380,7 +2384,12 @@ class ReportComponent {
                             { 'customer_job_area': 'Walnut Hills' },
                             { 'customer_job_area': 'Winslett' },
                             { 'customer_job_area': 'Cecil County Offsites (CCO)' },
-                            { 'customer_job_area': 'Sussex Place (SP)' }
+                            { 'customer_job_area': 'Sussex Place (SP)' },
+                            { 'customer_job_area': 'Standfield at Fairhill' },
+                            { 'customer_job_area': 'Franklin Country Offsites(GH)' },
+                            { 'customer_job_area': 'Baltimore Country Offsites(GHI)' },
+                            { 'customer_job_area': 'Shirley Ridge(SR)' },
+                            { 'customer_job_area': 'Shepherd Village(SV)' },
                         ];
                     }
                     if (param.data.customer_builder_name == 'HD') {
@@ -2451,14 +2460,17 @@ class ReportComponent {
                     }
                     if (param.data.customer_builder_name == 'NVR- Ryan Homes') {
                         rowData = [
-                            { 'customer_job_area': 'Bells Hills Terrace (WAP-BT)' }
+                            { 'customer_job_area': 'Bells Hills Terrace (WAP-BT)' },
+                            { 'customer_job_area': 'Valley Run (WAS-V3)' }
                         ];
                     }
                     if (param.data.customer_builder_name == 'Pegasus') {
                         rowData = [
                             { 'customer_job_area': 'Trails at Short Pump (TSP)' },
                             { 'customer_job_area': 'Villages at West Laurel (VWL)' },
-                            { 'customer_job_area': 'Belvedere' }
+                            { 'customer_job_area': 'Belvedere' },
+                            { 'customer_job_area': 'Courthouse Green' },
+                            { 'customer_job_area': 'River Forest' }
                         ];
                     }
                     if (param.data.customer_builder_name == 'POWERS HOMES') {
@@ -2493,7 +2505,8 @@ class ReportComponent {
                             { 'customer_job_area': 'Reserve at North Caldwell (6397)' },
                             { 'customer_job_area': 'Valley Forge Greene' },
                             { 'customer_job_area': 'Whitehall Estates (6904)' },
-                            { 'customer_job_area': 'Link at Wesmont Station(7281)' }
+                            { 'customer_job_area': 'Link at Wesmont Station(7281)' },
+                            { 'customer_job_area': 'Somerville Station (7280)' }
                         ];
                     }
                     if (param.data.customer_builder_name == 'Stanley Martin') {
@@ -2516,6 +2529,11 @@ class ReportComponent {
                     if (param.data.customer_builder_name == 'DMR - PDR') {
                         rowData = [
                             { 'customer_job_area': 'Macallan Crossing (MC)' }
+                        ];
+                    }
+                    if (param.data.customer_builder_name == 'Grand Villa Homes') {
+                        rowData = [
+                            { 'customer_job_area': 'Main Office' }
                         ];
                     }
                     return {
