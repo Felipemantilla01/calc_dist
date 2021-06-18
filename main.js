@@ -2035,6 +2035,9 @@ class ReportComponent {
             { 'installer_option': 'Kemal Ausar' },
             { 'installer_option': 'Ben Jones' },
             { 'installer_option': 'Sodo Goocho' },
+            { 'installer_option': 'Auner Chinchilla' },
+            { 'installer_option': 'Naranbat Damdindorj' },
+            { 'installer_option': 'Tulgaa Bayarsaikhan' },
         ];
         this.columnDefs = [
             { headerName: 'id', field: 'id', pinned: 'left', hide: false, headerClass: 'color-header-1', sortable: true, width: 100, editable: false },
