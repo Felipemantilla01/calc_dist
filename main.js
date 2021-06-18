@@ -1392,7 +1392,8 @@ const material_names = {
         { "material_name_area": "Color Silver Creek 3cm Polish" },
         { "material_name_area": "Color Pearl" },
         { "material_name_area": "Sparkling White (Snow Meadow) 3cm" },
-        { "material_name_area": "Quartz Clarino (HD Chorino) 3cm" }
+        { "material_name_area": "Quartz Clarino (HD Chorino) 3cm" },
+        { "material_name_area": "2566-Cambria-Lakedale 3CM" },
     ],
     "Howmar Homes": [
         { "material_name_area": "Absolute Black" },
@@ -3347,7 +3348,7 @@ NumericCellEditor.prototype.isCancelBeforeStart = function () {
 // - not very practical, but demonstrates the method.
 NumericCellEditor.prototype.isCancelAfterEnd = function () {
     var value = this.getValue();
-    return value.indexOf('007') >= 0;
+    return false;
 };
 // returns the new value after editing
 NumericCellEditor.prototype.getValue = function () {
